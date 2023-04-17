@@ -1,0 +1,46 @@
+<section class="games-cards-list">
+  <article class="games-card" *ngFor="let game of gamesList; index as i; trackBy: userTrackBy">
+    <div class="games-card__img-container">
+      <img
+        class="game-card__image"
+        [src]="'assets/actee-games-image/' + game.GamePic ?? '0b9c286c-83ae-4fbd-b520-b4b52a5944dc.webp'"
+        alt="Game image"
+      />
+      <div class="game-card__type">
+        <div>
+          <img
+            class="actee-change-color"
+            src="assets/actee-button-images/acteechangeColor.svg"
+            alt="Actee change color"
+          />
+        </div>
+        <div class="cycle-text">Cycle</div>
+      </div>
+      <div class="game-card__time">{{game.Length | ellipsis: 11}}</div>
+      <!-- <div class="overlay-button right-section">
+        <a href="#">Show Details</a>
+      </div> -->
+    </div>
+    <div class="games-card__content">
+      <div class="games-card__icon">
+        <img
+          src="assets/actee-button-images/icon_actee_logo.svg"
+          alt="Actee logo"
+        />
+      </div>
+      <div class="games-card__info">
+        <div class="gc__info__1">{{ game.name }}</div>
+        <div class="gc__info__2">
+          <span class="text-ellipsis">{{ (game.Username  ?? 'Actee') | ellipsis: 11}}</span>
+          <span>{{ game.TimesPlayed + ' players'}}</span>
+        </div>
+      </div>
+      <div class="games-card__three-dot-button">
+        <img
+          src="assets/actee-button-images/ThreeDots.svg"
+          alt="Three dots icon"
+        />
+      </div>
+    </div>
+  </article>
+</section>

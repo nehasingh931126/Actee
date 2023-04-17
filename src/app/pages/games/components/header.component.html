@@ -1,0 +1,42 @@
+<header class="games-search-panel">
+  <div class="games-search-panel__left">
+    <h2 class="games-text">Games</h2>
+    <div class="games-button">
+      <img
+        class="games-search-panel__listview-img"
+        src="assets/actee-button-images/ListView_Orange.svg"
+        alt="List view icon"
+      />
+      <img
+        class="games-search-panel__gridview-img"
+        src="assets/actee-button-images/Gridview.svg"
+        alt="Grid view icon"
+      />
+    </div>
+  </div>
+  <div class="games-search-panel__center">
+    <input
+      class="search-bar"
+      type="text"
+      placeholder="Search"
+      (keypress)="onSearchHandler($event)"
+    />
+  </div>
+  <div class="games-search-panel__right">
+    <a href="#">Create A Game</a>
+  </div>
+</header>
+<section class="games-tab-panel">
+  <nav class="games-tab-panel__navbar">
+    <span class="nav-item active">All Games</span>
+    <span class="nav-item">My Games</span>
+    <span class="nav-item">Tools</span>
+  </nav>
+  <div class="games-tab-panel__filter">
+    <div class="games-tab-panel__filter-title">
+      <span>Filter</span>
+      <img src="assets/actee-button-images/filter.svg" alt="Filter icon" />
+    </div>
+    <button class="games-tab__sortby">Sort By</button>
+  </div>
+</section>
