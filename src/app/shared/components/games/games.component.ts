@@ -10,10 +10,15 @@ export class GamesComponent {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.gamesList)
+    console.log(this.gamesList);
   }
 
   userTrackBy(index, game) {
     return game.id;
+  }
+
+  getName(name) {
+    const nameObject = JSON.parse(name).find((nameObject) => nameObject.code === 'en-us');
+    return (nameObject && nameObject.title) ?? 'no name';
   }
 }

@@ -16,10 +16,10 @@
         </div>
         <div class="cycle-text">Cycle</div>
       </div>
-      <div class="game-card__time">{{game.Length | ellipsis: 11}}</div>
-      <!-- <div class="overlay-button right-section">
+      <div class="game-card__time text-ellipsis">{{game.Length}}</div>
+      <!-- <app-overlay class="overlay-button right-section">
         <a href="#">Show Details</a>
-      </div> -->
+      </app-overlay> -->
     </div>
     <div class="games-card__content">
       <div class="games-card__icon">
@@ -29,9 +29,9 @@
         />
       </div>
       <div class="games-card__info">
-        <div class="gc__info__1">{{ game.name }}</div>
+        <div class="gc__info__1">{{ ( getName(game.Name))}}</div>
         <div class="gc__info__2">
-          <span class="text-ellipsis">{{ (game.Username  ?? 'Actee') | ellipsis: 11}}</span>
+          <span class="text-ellipsis">{{ (game.Username  ?? 'Actee')}}</span>
           <span>{{ game.TimesPlayed + ' players'}}</span>
         </div>
       </div>
