@@ -11,26 +11,18 @@ import { ModalService } from 'src/app/shared/uicomponents/modal/modal.service';
 })
 export class GamesComponent {
   gamesList$;
-  filterCriteria = {
-    searchkeyword: '',
-    page: 1,
-    pageSize: 10,
-  };
-
+  searchTerm = '';
   constructor(
     private _gamesService: GamesService,
     private _modalService: ModalService
   ) {}
 
   ngOnInit() {
-    this.gamesList$ = this.searchGamesList();
-  }
-  onSearchHandler(event) {
-    this.filterCriteria.searchkeyword = event;
-    this.gamesList$ = this.searchGamesList();
+    this.gamesList$ = this._gamesService.getGames();
   }
 
-  searchGamesList() {
-    return this._gamesService.getGames(this.filterCriteria);
+  onSearchHandler(event) {
+    console.log(event, "HERE IS THE EVENT");
+    this.searchTerm = event;
   }
 }

@@ -1,4 +1,4 @@
-<div *ngIf="isOpened" class="modal-container" (click)="closeModal()">
+<div *ngIf="isOpened" class="modal-container" (click)="closeModal($event)">
   <div class="modal">
     <header class="modal__header actee-bottom-margin">
       <ng-content select="[header]"></ng-content>

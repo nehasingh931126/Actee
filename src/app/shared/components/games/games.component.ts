@@ -13,17 +13,19 @@ export class GamesComponent {
 
   gameTypeImages = GameTypeImages;
   gameTypes = GameType;
-  
+  showModal: boolean = false;
   constructor(private _modalService: ModalService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   userTrackBy(index, game) {
     return game.id;
   }
 
   getName(name) {
+    if (!name) {
+      return 'no name';
+    }
     const nameObject = JSON.parse(name).find(
       (nameObject) => nameObject.code === 'en-us'
     );
@@ -41,8 +43,9 @@ export class GamesComponent {
       GuidePdfFiles: pdfGrid || [],
       theoryDescription: theories,
     };
-
+    
     this._modalService.create();
+    this.showModal = true;
   }
 
   getPdfFilesArray({ GuidePdfFiles }) {
@@ -55,5 +58,9 @@ export class GamesComponent {
 
   getAllTheories({ gameTheories }) {
     return gameTheories.map((obj) => obj.Title).join(', ');
+  }
+
+  closeModal() {
+    this.showModal= false;
   }
 }

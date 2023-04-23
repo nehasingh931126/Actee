@@ -7,10 +7,9 @@ import { map } from 'rxjs/operators';
 export class GamesService {
   gamesList = gamesData;
   constructor() {
-    console.log(gamesData);
   }
 
-  getGames(filterCriteria) {
+  getGames() {
     return of(this.gamesList.Data);
   }
 }

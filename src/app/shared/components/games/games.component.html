@@ -53,7 +53,7 @@
   </article>
 </section>
 
-<actee-modal *ngIf="gameObject">
+<actee-modal *ngIf="gameObject" (onClose)="closeModal()">
   <ng-container header>
     <div class="actee-flex-row-display">
       <div class="game-modal__header-left">
@@ -118,12 +118,12 @@
   </ng-container>
   <ng-container additionalSection>
     <div>Additional Documents:</div>
-    <div *ngIf="gameObject.GuidePdfFiles.length > 0">
+    <div *ngIf="gameObject?.GuidePdfFiles?.length > 0">
       <ng-container *ngFor="let pdfFile of gameObject.GuidePdfFiles">
         <div>{{ pdfFile.FileName }}</div>
       </ng-container>
     </div>
-    <div *ngIf="gameObject.GuidePdfFiles.length === 0">
+    <div *ngIf="gameObject?.GuidePdfFiles?.length === 0">
       No Additional Documents
     </div>
   </ng-container>

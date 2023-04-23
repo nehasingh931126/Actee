@@ -1,5 +1,13 @@
-import {Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input, ViewEncapsulation,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  OnDestroy,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
+
 import { ModalOptions, ModalService } from './modal.service';
 
 
@@ -11,7 +19,7 @@ import { ModalOptions, ModalService } from './modal.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalComponent implements OnInit, OnDestroy {
-  isOpened: boolean;
+  isOpened: boolean = false;
   options: ModalOptions;
 
   private readonly _subscription = new Subscription();
@@ -23,14 +31,13 @@ export class ModalComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this._subscription.add(
       this._modalService.onCreate.subscribe((res) => {
-        console.log(res, 'here in the modal')
         if (res.create) {
           this.options = res.options;
           this.isOpened = true;
-          this._cdr.markForCheck();
         } else {
           this.isOpened = false;
         }
+        this._cdr.markForCheck();
       })
     );
 
@@ -41,8 +48,10 @@ export class ModalComponent implements OnInit, OnDestroy {
     );
   }
 
-  closeModal() {
-    this._modalService.closeModal();
+  closeModal(event) {
+    if (event.target === event.currentTarget) {
+      this._modalService.closeModal();
+    }
   }
 
   ngOnDestroy(): void {

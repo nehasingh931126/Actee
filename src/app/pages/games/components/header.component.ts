@@ -10,6 +10,7 @@ export class GamesHeaderComponent {
 //   title = 'Actee';
 
   onSearchHandler($event) {
+    console.log($event.target.value, "Tagrt value");
     this.onSearch.emit($event.target.value || '');
   }
 }

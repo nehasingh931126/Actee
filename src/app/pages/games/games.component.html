@@ -1,2 +1,2 @@
 <actee-games-header (onSearch)="onSearchHandler($event)"></actee-games-header>
-<actee-common-games [gamesList]="this.gamesList$ | async"></actee-common-games>
+<actee-common-games [gamesList]="(this.gamesList$ | async | gamesearch: this.searchTerm)"></actee-common-games>

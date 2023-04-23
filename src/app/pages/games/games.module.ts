@@ -7,6 +7,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { GamesComponent } from './games.component';
 import {GamesHeaderComponent} from './components/header.component';
   
+import { GameSearchPipe } from './pipe/search.pipe';
+
 const routes: Routes = [
   {
     path: '',
@@ -16,11 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    SharedModule,
-    CommonModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [GamesComponent,GamesHeaderComponent],
+  imports: [SharedModule, CommonModule, RouterModule.forChild(routes)],
+  declarations: [GamesComponent, GamesHeaderComponent, GameSearchPipe],
 })
-export class GamesModule { }
+export class GamesModule {}
