@@ -26,3 +26,33 @@ a {
         text-overflow: ellipsis;
 }
 
+
+.actee-flex-row-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actee-flex-column-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.actee-bottom-margin {
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(204, 204, 204);
+}
+
+.actee-margin-bottom {
+    margin-bottom: 20px;
+}
+
+.actee-padding {
+    padding: 20px;
+}
+

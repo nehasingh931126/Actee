@@ -1,25 +1,33 @@
 <section class="games-cards-list">
-  <article class="games-card" *ngFor="let game of gamesList; index as i; trackBy: userTrackBy">
+  <article
+    class="games-card"
+    *ngFor="let game of gamesList; index as i; trackBy: userTrackBy"
+  >
     <div class="games-card__img-container">
       <img
         class="game-card__image"
-        [src]="'assets/actee-games-image/' + game.GamePic ?? '0b9c286c-83ae-4fbd-b520-b4b52a5944dc.webp'"
+        [src]="
+          'assets/actee-games-image/' + game.GamePic ??
+          '0b9c286c-83ae-4fbd-b520-b4b52a5944dc.webp'
+        "
         alt="Game image"
       />
       <div class="game-card__type">
         <div>
           <img
-            class="actee-change-color"
-            src="assets/actee-button-images/acteechangeColor.svg"
-            alt="Actee change color"
+            class="game-modal__image"
+            [src]="
+              'assets/actee-button-images/' + gameTypeImages[game.GameType]
+            "
+            alt="game.GameType"
           />
         </div>
-        <div class="cycle-text">Cycle</div>
+        <div class="cycle-text">{{ gameTypes[game.GameType] }}</div>
       </div>
-      <div class="game-card__time text-ellipsis">{{game.Length}}</div>
-      <!-- <app-overlay class="overlay-button right-section">
-        <a href="#">Show Details</a>
-      </app-overlay> -->
+      <div class="game-card__time text-ellipsis">{{ game.Length }}</div>
+      <div class="overlay-button">
+        <a href="#" (click)="onClick($event, game)">Show Details</a>
+      </div>
     </div>
     <div class="games-card__content">
       <div class="games-card__icon">
@@ -29,10 +37,10 @@
         />
       </div>
       <div class="games-card__info">
-        <div class="gc__info__1">{{ ( getName(game.Name))}}</div>
+        <div class="gc__info__1">{{ getName(game.Name) }}</div>
         <div class="gc__info__2">
-          <span class="text-ellipsis">{{ (game.Username  ?? 'Actee')}}</span>
-          <span>{{ game.TimesPlayed + ' players'}}</span>
+          <span class="text-ellipsis">{{ game.Username ?? "Actee" }}</span>
+          <span>{{ game.TimesPlayed + " players" }}</span>
         </div>
       </div>
       <div class="games-card__three-dot-button">
@@ -44,3 +52,79 @@
     </div>
   </article>
 </section>
+
+<actee-modal *ngIf="gameObject">
+  <ng-container header>
+    <div class="actee-flex-row-display">
+      <div class="game-modal__header-left">
+        <h1 class="game-modal__header_title">{{ getName(gameObject.Name) }}</h1>
+        <div>
+          <span class="game-modal__theory-label">Theories: </span>
+          <span>{{ gameObject.theoryDescription || "" }}</span>
+        </div>
+      </div>
+      <div class="game-modal__header-right actee-flex-row-display">
+        <button>Try It!!</button>
+        <button>Add To Session!</button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container section>
+    <div class="game-modal__header_details actee-flex-row-display actee-padding">
+      <div class="actee-flex-column-display">
+        <div>Duration</div>
+        <div>{{ gameObject.Length }}</div>
+        <div>Average</div>
+      </div>
+      <div class="actee-flex-column-display">
+        <div>Times Played</div>
+        <div>{{ gameObject.TimesPlayed }}</div>
+        <div>{{ "Rank " + gameObject.Rank }}</div>
+      </div>
+      <div class="actee-flex-column-display">
+        <div>Language</div>
+        <div>{{ gameObject.Language | uppercase }}</div>
+        <div>Average</div>
+      </div>
+      <div class="actee-flex-column-display">
+        <div>Theory</div>
+        <div>{{ gameObject.TheoryCount }}</div>
+        <div>Different Theories</div>
+      </div>
+      <div>
+        <div>Type</div>
+        <img
+          class=""
+          [src]="
+            'assets/actee-button-images/' + gameTypeImages[gameObject.GameType]
+          "
+          alt="gameObject.GameType"
+        />
+        <div>{{ gameTypes[gameObject.GameType] }}</div>
+      </div>
+    </div>
+    <div class="game-modal__image__section actee-flex-row-display">
+      <div class="game-modal__image">
+        <img [src]="'assets/actee-modal-images/Cycle1.png'" alt="Cycle 1" />
+      </div>
+      <div class="game-modal__image">
+        <img [src]="'assets/actee-modal-images/Cycle2.png'" alt="Cycle 2" />
+      </div>
+      <div class="game-modal__image">
+        <img [src]="'assets/actee-modal-images/Cycle3.png'" alt="cycle 3" />
+      </div>
+    </div>
+    <div class="game-modal__desc" [innerHTML]="gameObject.GameDesc"></div>
+  </ng-container>
+  <ng-container additionalSection>
+    <div>Additional Documents:</div>
+    <div *ngIf="gameObject.GuidePdfFiles.length > 0">
+      <ng-container *ngFor="let pdfFile of gameObject.GuidePdfFiles">
+        <div>{{ pdfFile.FileName }}</div>
+      </ng-container>
+    </div>
+    <div *ngIf="gameObject.GuidePdfFiles.length === 0">
+      No Additional Documents
+    </div>
+  </ng-container>
+</actee-modal>
