@@ -1,5 +1,5 @@
 <section class="games-cards-list">
-  <article
+  <figure
     class="games-card"
     *ngFor="let game of gamesList; index as i; trackBy: userTrackBy"
   >
@@ -50,7 +50,7 @@
         />
       </div>
     </div>
-  </article>
+  </figure>
 </section>
 
 <actee-modal *ngIf="gameObject" (onClose)="closeModal()">
