@@ -121,7 +121,7 @@
     <div class="game-pdf__document_container">
     <ng-container *ngIf="gameObject?.GuidePdfFiles?.length > 0">
       <div class="game-pdf__documents" *ngFor="let pdfFile of gameObject.GuidePdfFiles">
-        <div>{{ pdfFile.FileName }}</div>
+        <div class="file-name">{{ pdfFile.FileName }}</div>
       </div>
     </ng-container>
     </div>
