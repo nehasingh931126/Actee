@@ -21,14 +21,15 @@ A task by Actee Team
     Service created to fetch the games like from the backend for now just added the json data
 
 # Imporvements can be done
-    Given the time there are limited things that can be done
-    
+    Given the time there are limited things that can be done, since I have taken nearly 6 hours to complete this task
+    I could do limited links in that time
+
     > Points to add up or improve
-        on Scroll loading of the game image tiles rather loading on first go
+        on scroll loading of the game image tiles rather loading on first go
         Having a theme css file for all the common css to write
         Testcase can be written for all the components and service created 
         Using saas way of writting the css
-        Images can be stored in the data base and can be fetched in frontend and rendered
-        use typescript effeciently by adding the interface for games json response
-        using the typescript utility types
+        Images can be stored in the data base in binary foramt and can be fetched in frontend and rendered
+        use typescript effeciently by adding the interface for games json response a
+        Media Queries for the site
 
