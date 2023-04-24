@@ -38,5 +38,4 @@ A task by Actee Team
 
 [<img src="src/assets/actee-final-project/project-snapshot2.png" width="50%">](https://www.youtube.com/watch?v=zKF6I_Trxdg "Click to see youtube video of Actee task")
 
-    Video shows the successfull build of the Application: https://youtu.be/wTLkjFUD3hw
     Video shows functionality of the Application: https://www.youtube.com/watch?v=zKF6I_Trxdg
