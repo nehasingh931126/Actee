@@ -2,11 +2,16 @@
 A task by Actee Team
 
 # Implementation
-Created a webpage
-    pages folder    :   Added the Games Module feature
-    shared folder   :   Added the modal, games common component, game type
+    Created a webpage
+        pages folder    :   
+                            Games Module
+        shared folder   :   
+                            components: Games Component
+                            uicomponents: modal component
+                            constants: game constants used in the application
 
-shared folder: can have all the shared folders that can be shared accross different parts of the application
+
+        shared folder: can have all the shared folders that can be shared accross different parts of the application
 
 # Angular concepts used
     Lazy loading for Games Feature Module
@@ -24,5 +29,6 @@ shared folder: can have all the shared folders that can be shared accross differ
         Testcase can be written for all the components and service created 
         Using saas way of writting the css
         Images can be stored in the data base and can be fetched in frontend and rendered
-
+        use typescript effeciently by adding the interface for games json response
+        using the typescript utility types
 
