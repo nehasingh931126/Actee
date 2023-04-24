@@ -20,7 +20,7 @@ A task by Actee Team
     Modal created with the service and used the change detection
     Service created to fetch the games like from the backend for now just added the json data
 
-# Imporvements can be done
+# Modification can be done
     Given the time there are limited things that can be done, since I have taken nearly 6 hours to complete this task
     I could do limited links in that time
 
