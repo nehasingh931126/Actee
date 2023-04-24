@@ -30,6 +30,7 @@ A task by Actee Team
         Testcase can be written for all the components and service created 
         Using scss way of writting the css using import etc
         Images can be stored in the data base in binary foramt and can be fetched in frontend and rendered
+        modify tsconfig to support more features
         Use typescript effeciently by adding the interface for games json response and also adding the utility types
         Media Queries for the site
 
