@@ -24,8 +24,8 @@
         </div>
         <div class="cycle-text">{{ gameTypes[game.GameType] }}</div>
       </div>
-      <div class="game-card__time text-ellipsis">{{ game.Length }}</div>
-      <div class="overlay-button">
+      <div class="game-card__time">{{ game.Length }}</div>
+      <div class="overlay-button actee-flex-row-center-display">
         <a href="#" (click)="onClick($event, game)">Show Details</a>
       </div>
     </div>
@@ -39,8 +39,8 @@
       <div class="games-card__info">
         <div class="gc__info__1">{{ getName(game.Name) }}</div>
         <div class="gc__info__2">
-          <span class="text-ellipsis">{{ game.Username ?? "Actee" }}</span>
-          <span>{{ game.TimesPlayed + " players" }}</span>
+          <span class="name">{{ game.Username ?? "Actee" }}</span>
+          <span class="number-value">{{ game.TimesPlayed + " players" }}</span>
         </div>
       </div>
       <div class="games-card__three-dot-button">
@@ -55,7 +55,7 @@
 
 <actee-modal *ngIf="gameObject" (onClose)="closeModal()">
   <ng-container header>
-    <div class="actee-flex-row-display">
+    <header class="game-modal__header-container actee-flex-row-display actee-bottom-margin">
       <div class="game-modal__header-left">
         <h1 class="game-modal__header_title">{{ getName(gameObject.Name) }}</h1>
         <div>
@@ -63,35 +63,35 @@
           <span>{{ gameObject.theoryDescription || "" }}</span>
         </div>
       </div>
-      <div class="game-modal__header-right actee-flex-row-display">
-        <button>Try It!!</button>
-        <button>Add To Session!</button>
+      <div class="game-modal__header-right">
+        <a>Try It!!</a>
+        <a>Add To Session!</a>
       </div>
-    </div>
+    </header>
   </ng-container>
   <ng-container section>
     <div class="game-modal__header_details actee-flex-row-display actee-padding">
-      <div class="actee-flex-column-display">
+      <div class="header-column-decorator actee-flex-column-display">
         <div>Duration</div>
-        <div>{{ gameObject.Length }}</div>
+        <div class="detail">{{ gameObject.Length }}</div>
         <div>Average</div>
       </div>
-      <div class="actee-flex-column-display">
+      <div class="header-column-decorator actee-flex-column-display">
         <div>Times Played</div>
-        <div>{{ gameObject.TimesPlayed }}</div>
+        <div class="detail">{{ gameObject.TimesPlayed }}</div>
         <div>{{ "Rank " + gameObject.Rank }}</div>
       </div>
-      <div class="actee-flex-column-display">
+      <div class="header-column-decorator actee-flex-column-display">
         <div>Language</div>
-        <div>{{ gameObject.Language | uppercase }}</div>
+        <div class="detail">{{ gameObject.Language | uppercase }}</div>
         <div>Average</div>
       </div>
-      <div class="actee-flex-column-display">
+      <div class="header-column-decorator actee-flex-column-display">
         <div>Theory</div>
-        <div>{{ gameObject.TheoryCount }}</div>
+        <div class="detail">{{ gameObject.TheoryCount }}</div>
         <div>Different Theories</div>
       </div>
-      <div>
+      <div class="header-column-decorator actee-flex-column-display">
         <div>Type</div>
         <img
           class=""
@@ -118,10 +118,12 @@
   </ng-container>
   <ng-container additionalSection>
     <div>Additional Documents:</div>
-    <div *ngIf="gameObject?.GuidePdfFiles?.length > 0">
-      <ng-container *ngFor="let pdfFile of gameObject.GuidePdfFiles">
+    <div class="game-pdf__document_container">
+    <ng-container *ngIf="gameObject?.GuidePdfFiles?.length > 0">
+      <div class="game-pdf__documents" *ngFor="let pdfFile of gameObject.GuidePdfFiles">
         <div>{{ pdfFile.FileName }}</div>
-      </ng-container>
+      </div>
+    </ng-container>
     </div>
     <div *ngIf="gameObject?.GuidePdfFiles?.length === 0">
       No Additional Documents

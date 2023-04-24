@@ -19,7 +19,7 @@
     overflow-y: auto;
     border-radius: 10px;
     position: relative;
-    
+
     &__header {
       display: flex;
       justify-content: space-between;
@@ -35,6 +35,7 @@
       div {
         margin-left: 10px;
       }
+      
     }
   }
 }
