@@ -12,7 +12,7 @@
     border-radius: 7px;
     overflow: hidden;
     background: white;
-    width: 400px;
+    width: 100%;
   }
 }
 
@@ -24,6 +24,7 @@
 
 .game-card__image {
   height: 200px;
+  object-fit: cover;
 }
 
 .game-card__image img {
@@ -243,25 +244,25 @@
   margin: 10px;
 }
 
-// @media only screen and (min-width: 375px) {
-//   .games-cards-list {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     margin: auto;
-//   }
-// }
+@media only screen and (min-width: 375px) {
+  .games-cards-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+}
 
-// @media only screen and (min-width: 576px) {
-//   .games-cards-list {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     margin: auto;
-//   }
-// }
+@media only screen and (min-width: 576px) {
+  .games-cards-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+}
 
 @media only screen and (min-width: 930px) {
   .games-cards-list {
