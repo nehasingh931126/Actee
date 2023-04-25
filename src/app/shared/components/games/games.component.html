@@ -4,14 +4,13 @@
     *ngFor="let game of gamesList; index as i; trackBy: userTrackBy"
   >
     <div class="games-card__img-container">
-      <img
-        class="game-card__image"
+      <div class="game-card__image"><img
         [src]="
           'assets/actee-games-image/' + game.GamePic ??
           '0b9c286c-83ae-4fbd-b520-b4b52a5944dc.webp'
         "
         alt="Game image"
-      />
+      /></div>
       <div class="game-card__type">
         <div>
           <img
@@ -53,9 +52,13 @@
   </figure>
 </section>
 
+
+
 <actee-modal *ngIf="gameObject" (onClose)="closeModal()">
   <ng-container header>
-    <header class="game-modal__header-container actee-flex-row-display actee-bottom-margin">
+    <header
+      class="game-modal__header-container actee-flex-row-display actee-bottom-margin"
+    >
       <div class="game-modal__header-left">
         <h1 class="game-modal__header_title">{{ getName(gameObject.Name) }}</h1>
         <div>
@@ -70,7 +73,9 @@
     </header>
   </ng-container>
   <ng-container section>
-    <div class="game-modal__header_details actee-flex-row-display actee-padding">
+    <div
+      class="game-modal__header_details actee-flex-row-display actee-padding"
+    >
       <div class="header-column-decorator actee-flex-column-display">
         <div>Duration</div>
         <div class="detail">{{ gameObject.Length }}</div>
@@ -119,11 +124,14 @@
   <ng-container additionalSection>
     <div>Additional Documents:</div>
     <div class="game-pdf__document_container">
-    <ng-container *ngIf="gameObject?.GuidePdfFiles?.length > 0">
-      <div class="game-pdf__documents" *ngFor="let pdfFile of gameObject.GuidePdfFiles">
-        <div class="file-name">{{ pdfFile.FileName }}</div>
-      </div>
-    </ng-container>
+      <ng-container *ngIf="gameObject?.GuidePdfFiles?.length > 0">
+        <div
+          class="game-pdf__documents"
+          *ngFor="let pdfFile of gameObject.GuidePdfFiles"
+        >
+          <div class="file-name">{{ pdfFile.FileName }}</div>
+        </div>
+      </ng-container>
     </div>
     <div *ngIf="gameObject?.GuidePdfFiles?.length === 0">
       No Additional Documents
