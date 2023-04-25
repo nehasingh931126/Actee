@@ -243,25 +243,25 @@
   margin: 10px;
 }
 
-@media only screen and (max-width: 375px) {
-  .games-cards-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-  }
-}
+// @media only screen and (max-width: 375px) {
+//   .games-cards-list {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     margin: auto;
+//   }
+// }
 
-@media only screen and (max-width: 576px) {
-  .games-cards-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-  }
-}
+// @media only screen and (max-width: 576px) {
+//   .games-cards-list {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     margin: auto;
+//   }
+// }
 
 @media only screen and (max-width: 930px) {
   .games-cards-list {
